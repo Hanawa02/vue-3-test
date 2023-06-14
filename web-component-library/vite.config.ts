@@ -9,9 +9,12 @@ export default defineConfig({
   build: {
     cssCodeSplit: false,
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
+      // ...currentConfig,
+      entry: {
+        "web-component-library": resolve(__dirname, "src/main.ts"),
+        "components/index": resolve(__dirname, "src/components/index.ts"),
+      },
       name: "Web Component Library",
-      fileName: "web-component-library",
     },
     rollupOptions: {
       external: ["vue"],

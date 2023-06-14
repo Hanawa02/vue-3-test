@@ -3,18 +3,21 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "main": "./dist/web-component-library.umd.cjs",
+  "main": "./dist/web-component-library.cjs",
   "module": "./dist/web-component-library.js",
   "exports": {
     ".": {
       "import": "./dist/web-component-library.js",
-      "require": "./dist/web-component-library.umd.cjs"
+      "require": "./dist/web-component-library.cjs"
+    },
+    "./components": {
+      "import": "./dist/components/index.js",
+      "require": "./dist/components/index.cjs"
     }
   },
   "types": "./dist/index.d.ts",
   "files": [
-    "./dist",
-    "./src/components/"
+    "./dist"
   ],
   "scripts": {
     "dev": "vite",
